@@ -21,13 +21,13 @@ You should receive a message including the statistics of an IOTA node. This mean
 
 Here are the examples included:
 
-- 1-hello-world.js                
+- 1-hello-world.js
 - 2.1-send-hello.js
 - 2.2-fetch-hello.js
 - 3.1-create-address.js
 - 3.2-check-balance.js
-- 4-send-tokens.js   
-- 5.1-send-data.js               
+- 4-send-tokens.js
+- 5.1-send-data.js
 - 5.2-fetch-data.js
 - 6.1-zmq-listen.js
 - 6.2-zmq-message.js
@@ -50,7 +50,7 @@ Here are the examples included:
 
 #### Contribution
 
-PRs are welcome on `develop`
+PRs are welcome on `master`
 
 
 
