@@ -1,6 +1,9 @@
 const Mam = require('@iota/mam')
 const { asciiToTrytes, trytesToAscii } = require('@iota/converter')
 
+// Enter root of the
+const root = ''
+
 async function initMam() {
   console.log('\r\n\r\n')
   console.log('Listening to MAM stream for Porsche Cayenne Location Data...')

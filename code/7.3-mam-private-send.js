@@ -1,3 +1,7 @@
+///////////////////////////////
+// MAM: Publish messages to Private Stream
+///////////////////////////////
+
 const Mam = require('@iota/mam')
 const { asciiToTrytes } = require('@iota/converter')
 

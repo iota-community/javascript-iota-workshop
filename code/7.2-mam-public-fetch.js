@@ -1,3 +1,7 @@
+///////////////////////////////
+// MAM: Fetch messages to Public Stream
+///////////////////////////////
+
 const Mam = require('@iota/mam')
 const { trytesToAscii } = require('@iota/converter')
 
