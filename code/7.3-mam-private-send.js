@@ -24,3 +24,4 @@ const publish = async data => {
 }
 
 publish('Super Secret Message')
+publish('Super Secret Message2')

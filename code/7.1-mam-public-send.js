@@ -20,3 +20,4 @@ const publish = async data => {
 }
 
 publish('Super public message')
+publish('Super public message2')

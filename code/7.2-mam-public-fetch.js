@@ -5,7 +5,7 @@ const { trytesToAscii } = require('@iota/converter')
 Mam.init('https://nodes.devnet.thetangle.org:443')
 
 const root =
-  'EPKKCPWEZBMQYZEEVIN9FCU9KYFZQTLJMVJGSJKYJHEJLSFBCWYFC9URDBLWC9GINUNWUWWSZJWNT9YJQ'
+  'OXPOYTSZEOGUOITHYBWDYHXNCLRVQHGXMFMEIJLNHNDEWJYWQHGRPTQJ99MUWRDAOVPBIGSW9MSQLMOOA'
 
 // Display coordinate data on our screen when we receive it
 const showData = raw => {

@@ -12,9 +12,6 @@ const iota = iotaLibrary.composeAPI({
 const seed =
   'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D'
 
-// Create a variable for the address we will send too
-let receivingAddress = ''
-
 // Create a wrapping function so we can use async/await
 const main = async () => {
   // Generate a different address from your seed
