@@ -6,7 +6,7 @@ const root = ''
 
 async function initMam() {
   console.log('\r\n\r\n')
-  console.log('Listening to MAM stream for Porsche Cayenne Location Data...')
+  console.log('Listening to MAM stream...')
   console.log('\r\n')
   await Mam.init('https://nodes.devnet.iota.org:443')
 }
