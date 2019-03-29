@@ -10,19 +10,21 @@ const iota = iotaLibrary.composeAPI({
 })
 
 const address =
-  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLQD'
+  'LOREMOORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLQD'
 
 iota
   .findTransactionObjects({ addresses: [address] })
   .then(response => {
-    console.log('Encoded message:')
-    console.log(response[0].signatureMessageFragment)
+    const msg = response
+      .sort((a, b) => a.currentIndex - b.currentIndex)
+      .map(tx => tx.signatureMessageFragment)
+      .join('')
 
-    // Modify trytes into a consumable length
-    const trytes = response[0].signatureMessageFragment.slice(0, -1)
+    console.log('Encoded message:')
+    console.log(msg)
 
     //Convert trytes to plan text
-    const data = Converter.trytesToAscii(trytes)
+    const data = Converter.trytesToAscii(msg)
     console.log('Decoded message:')
     console.log(data)
   })
