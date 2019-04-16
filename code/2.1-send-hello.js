@@ -23,7 +23,7 @@ const transfers = [
   {
     value: 0,
     address: address,
-    tag: 'KLULTWYK9FP'
+    message: nachricht_in_trytes
   }
 ]
 
