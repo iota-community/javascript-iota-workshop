@@ -15,15 +15,15 @@ const seed =
 
 const converter = require('@iota/converter')
 
-const nachricht = "HELLOWORLD"
+const message = "HELLOWORLD"
 
-const nachricht_in_trytes = converter.asciiToTrytes(nachricht)
+const message_in_trytes = converter.asciiToTrytes(message)
 
 const transfers = [
   {
     value: 0,
     address: address,
-    message: nachricht_in_trytes
+    message: message_in_trytes
   }
 ]
 
