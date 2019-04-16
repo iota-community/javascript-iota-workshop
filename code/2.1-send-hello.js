@@ -13,6 +13,12 @@ const address =
 const seed =
   'PUEOTSEITFEVEWCWBTSIZM9NKRGJEIMXTULBACGFRQK9IMGICLBKW9TTEVSDQMGWKBXPVCBMMCXWMNPDX'
 
+const converter = require('@iota/converter')
+
+const nachricht = "HELLOWORLD"
+
+const nachricht_in_trytes = converter.asciiToTrytes(nachricht)
+
 const transfers = [
   {
     value: 0,
