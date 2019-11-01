@@ -1,21 +1,22 @@
-///////////////////////////////
-// Fetch your HELLOWORLD Message
-///////////////////////////////
+////////////////////////////////////////////////
+// Read your "hello-world" message on the Tangle
+////////////////////////////////////////////////
 
-const iotaLibrary = require('@iota/core')
+const Iota = require('@iota/core');
 
-const iota = iotaLibrary.composeAPI({
+const iota = Iota.composeAPI({
   provider: 'https://nodes.devnet.thetangle.org:443'
-})
+});
 
 const address =
-  'HEQLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWOR99DMNFAQLWHD'
+  'HEQLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWOR99D';
 
-iota
-  .findTransactionObjects({ addresses: [address] })
+
+// Get any transactions that were sent to the address
+iota.findTransactionObjects({ addresses: [address] })
   .then(response => {
-    console.log(response)
+    console.log(response);
   })
   .catch(err => {
-    console.error(err)
-  })
+    console.error(err);
+  });

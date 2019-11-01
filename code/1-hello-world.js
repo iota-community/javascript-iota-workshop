@@ -1,16 +1,19 @@
 ///////////////////////////////
-// Environment Check
+// Connect to a synchronized node
 ///////////////////////////////
 
-const iotaLibrary = require('@iota/core')
+const Iota = require('@iota/core');
 
-const iota = iotaLibrary.composeAPI({
+// Connect to a node
+const iota = Iota.composeAPI({
   provider: 'https://nodes.devnet.thetangle.org:443'
-})
+});
 
-iota
-  .getNodeInfo()
-  .then(response => console.log(response))
+// Request information about the node
+iota.getNodeInfo()
+  .then(response => {
+    console.log(JSON.stringify(response, null, 1));
+  })
   .catch(err => {
     console.error(err)
-  })
+  });

@@ -2,45 +2,55 @@
 // Send tokens
 ///////////////////////////////
 
-const iotaLibrary = require('@iota/core')
+const Iota = require('@iota/core');
 
-const iota = iotaLibrary.composeAPI({
+// Connect to a node
+const iota = Iota.composeAPI({
   provider: 'https://nodes.devnet.thetangle.org:443'
-})
+});
 
-// Replace this with the seed you sent tokens too!
+// Define the depth that the node will use for tip selection
+const depth = 3;
+// Define the minimum weight magnitude for the Devnet
+const minimumWeightMagnitude = 9;
+
+// Replace this seed with the one that has IOTA tokens
 const seed =
-  'HELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORLDHELLOWORL9D'
+  'PUETTSEITFEVEWCWBTSIZM9NKRGJEIMXTULBACGFRQK9IMGICLBKW9TTEVSDQMGWKBXPVCBMMCXWMNPDX';
 
-// Create a wrapping function so we can use async/await
+// Create a wrapping function so you can use async/await
 const main = async () => {
-  // Generate a different address from your seed
-  const receivingAddress = await iota.getNewAddress(seed, {
-    index: 1,
-    total: 1
-  })
 
-  // Construct a TX to our new address
+  // Generate a new to send the tokens to
+  // Be sure that you have never withdrawn from this address before 
+  const receivingAddress = await iota.getNewAddress(seed, {
+    index: 2,
+    total: 1
+  });
+
+// Define an input transaction object
+// that sends 500 i to your new address
   const transfers = [
     {
       value: 500,
       address: receivingAddress[0],
       tag: 'MYMAGIC'
     }
-  ]
-  console.log('Sending 500i to ' + receivingAddress)
+  ];
+
+  console.log('Sending 500i to ' + receivingAddress[0]);
 
   try {
     // Construct bundle and convert to trytes
-    const trytes = await iota.prepareTransfers(seed, transfers)
+    const trytes = await iota.prepareTransfers(seed, transfers);
     // Send bundle to node.
-    const response = await iota.sendTrytes(trytes, 3, 9)
+    const response = await iota.sendTrytes(trytes, depth, minimumWeightMagnitude);
 
-    console.log('Completed TXs')
-    response.map(tx => console.log(tx))
-  } catch (e) {
-    console.log(e)
+    console.log('Bundle sent');
+    response.map(tx => console.log(tx));
+  } catch (error) {
+    console.log(error);
   }
 }
 
-main()
+main();

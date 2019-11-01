@@ -15,8 +15,6 @@ node code/1-hello-world.js
 
 You should receive a message including the statistics of an IOTA node. This means you can explore and run the other examples.
 
-
-
 ### Examples included
 
 Here are the examples included:
@@ -24,7 +22,7 @@ Here are the examples included:
 - 1-hello-world.js
 - 2.1-send-hello.js
 - 2.2-fetch-hello.js
-- 3.1-create-address.js
+- 3.1-generate-address.js
 - 3.2-check-balance.js
 - 4-send-tokens.js
 - 5.1-send-data.js
@@ -41,12 +39,8 @@ Here are the examples included:
 
 ### Work to be done:
 
-- Provide directed commentary alongside each example!
-- Improve code commenting
 - Refactor code into a single style (arrows vs functions)
 - Add complex application examples
-
-
 
 #### Contribution
 

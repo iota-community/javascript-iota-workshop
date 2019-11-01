@@ -2,41 +2,44 @@
 // Listen to live transactions
 ///////////////////////////////
 
-let zmq = require('zeromq')
-let sock = zmq.socket('sub')
+const zmq = require('zeromq');
+const sock = zmq.socket('sub');
 
-// Connect to the devnet node's ZMQ port
-sock.connect('tcp://zmq.devnet.iota.org:5556')
+// Connect to a Devnet node's ZMQ port
+sock.connect('tcp://zmq.devnet.iota.org:5556');
 
-// Check if there is no command line argument
+// Check for a command-line argument
 if (!process.argv[2]) {
   // Prompt user to add an address to the commmand line
-  console.log('Watching all TXs on the node')
+  console.log('Listening for all transactions')
   console.log('---------------------')
-  console.log('Note: If you want to watch an address for TXs use this:')
-  console.log('node 6-zmq-listen.js AHSAK..99WS')
+  console.log('If you want to listen for transactions that are sent to a particular address,');
+  console.log('do the following in the command line: node 6-zmq-listen.js AN...ADDRESS')
 
-  // Subscribe to any TX coming in to the node
-  sock.subscribe('tx')
+  // Subscribe to all transactions that the node receives
+  sock.subscribe('tx');
 } else {
-  console.log('Watching for transactions to this address: ' + process.argv[2])
+  console.log('Listening for transactions sent to this address: ' + process.argv[2])
   console.log(
-    'Remember to send a TX to this address & be patient it can take 30seconds for the tx appear.'
-  )
+    'Remember to send a transaction to this address \n and be patient: It can take 30seconds for the it appear.')
   // Subscribe to the address thats passed in via the CLI
   sock.subscribe(process.argv[2])
 }
 
 sock.on('message', msg => {
-  const data = msg.toString().split(' ') // Split to get topic & data
+   // Split the data into an array
+  const data = msg.toString().split(' ');
   switch (
-    data[0] // Use index 0 to match topic
+    // Use index 0 to match the name of the topic
+    data[0]
   ) {
-    case 'tx': // Display any TX coming in.
-      console.log(`I'm a TX!`, data)
+    // Display all transactions as the node receives them
+    case 'tx': 
+      console.log(`I'm a transaction!`, data)
       break
-    case process.argv[2]: // Use the command line argument to subscribe.
-      console.log(`I'm the TX you are looking for!`, data)
+    // Display only transactions that were sent to a given address
+    case process.argv[2]: 
+      console.log(`I'm the transaction you are looking for!`, data);
       break
   }
-})
+});
