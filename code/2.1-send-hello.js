@@ -1,6 +1,6 @@
-///////////////////////////////
+/// ////////////////////////////
 // Send HELLOWORLD
-///////////////////////////////
+/// ////////////////////////////
 
 const iotaLibrary = require('@iota/core')
 
@@ -15,21 +15,21 @@ const seed =
 
 const converter = require('@iota/converter')
 
-const message = "HELLOWORLD"
+const message = 'HELLOWORLD'
 
-const message_in_trytes = converter.asciiToTrytes(message)
+const messageInTrytes = converter.asciiToTrytes(message)
 
 const transfers = [
   {
     value: 0,
     address: address,
-    message: message_in_trytes
+    message: messageInTrytes
   }
 ]
 
 iota
   .prepareTransfers(seed, transfers)
-  .then(trytes => iota.sendTrytes(trytes, (depth = 3), (mwm = 9)))
+  .then(trytes => iota.sendTrytes(trytes, 3, 9))
   .then(bundle => {
     console.log(bundle)
   })

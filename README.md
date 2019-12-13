@@ -1,6 +1,6 @@
 # IOTA Workshop
 
-Simple examples to help a developer work through interacting with the IOTA network. 
+Simple examples to help a developer work through interacting with the IOTA network.
 
 ### Getting started
 

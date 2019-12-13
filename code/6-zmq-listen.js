@@ -1,9 +1,9 @@
-///////////////////////////////
+/// ////////////////////////////
 // Listen to live transactions
-///////////////////////////////
+/// ////////////////////////////
 
-let zmq = require('zeromq')
-let sock = zmq.socket('sub')
+const zmq = require('zeromq')
+const sock = zmq.socket('sub')
 
 // Connect to the devnet node's ZMQ port
 sock.connect('tcp://zmq.devnet.iota.org:5556')

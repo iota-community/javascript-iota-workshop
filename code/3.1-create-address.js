@@ -1,10 +1,10 @@
-///////////////////////////////
+/// ////////////////////////////
 // Create an address from a new seed
-/////
+/// //
 // First: run this code in a unix based terminal to generate an 81 Tryte seed.
 // 'cat /dev/urandom |LC_ALL=C tr -dc 'A-Z9' | fold -w 81 | head -n 1'
 // Paste the output of the above code into the 'seed' section below.
-///////////////////////////////
+/// ////////////////////////////
 
 const iotaLibrary = require('@iota/core')
 

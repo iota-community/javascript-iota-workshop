@@ -1,6 +1,6 @@
-///////////////////////////////
+/// ////////////////////////////
 // Fetch your HELLOWORLD Message
-///////////////////////////////
+/// ////////////////////////////
 
 const iotaLibrary = require('@iota/core')
 const Converter = require('@iota/converter')
@@ -23,7 +23,7 @@ iota
     console.log('Encoded message:')
     console.log(msg)
 
-    //Convert trytes to plan text
+    // Convert trytes to plan text
     const data = Converter.trytesToAscii(msg)
     console.log('Decoded message:')
     console.log(data)

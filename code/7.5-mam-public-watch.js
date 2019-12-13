@@ -1,31 +1,26 @@
 const Mam = require('@iota/mam')
-const { asciiToTrytes, trytesToAscii } = require('@iota/converter')
 
-// Enter root of the
-const root = ''
-
-async function initMam() {
+;(async () => {
   console.log('\r\n\r\n')
   console.log('Listening to MAM stream...')
   console.log('\r\n')
   await Mam.init('https://nodes.devnet.iota.org:443')
-}
 
-// Check the MAM stream every 5 seconds for new data on the current root
-// If a new root is returned we'll monitor that one from there on.
-async function checkMam() {
-  if (root !== nextRoot) {
-    root = nextRoot
-  }
+  let root = ''
+  let nextRoot = ''
 
-  // The showData callback will be called in order for each message found
-  const data = await Mam.fetch(root, 'public', null, showData)
-  nextRoot = data.nextRoot
+  await checkMam()
 
-  // Check again in 5 seconds
   setTimeout(checkMam, 5000)
-}
 
-// Start the monitoring!
-initMam()
-checkMam()
+  async function checkMam () {
+    // Check the MAM stream every 5 seconds for new data on the current root
+    // If a new root is returned we'll monitor that one from there on.
+    if (root !== nextRoot) {
+      root = nextRoot
+    }
+
+    const data = await Mam.fetch(root, 'public', null)
+    nextRoot = data.nextRoot
+  }
+})()

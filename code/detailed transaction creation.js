@@ -1,9 +1,8 @@
-///////////////////////////////
+/// ////////////////////////////
 // Detailed transaction creation
-///////////////////////////////
+/// ////////////////////////////
 
 const iotaLibrary = require('@iota/core')
-const txconverter = require('@iota/transaction-converter')
 
 const iota = iotaLibrary.composeAPI({
   provider: 'https://nodes.devnet.thetangle.org:443'
@@ -22,7 +21,7 @@ const transfers = [
 ]
 
 // Create a wrapping function so we can use async/await
-async function main() {
+async function main () {
   try {
     const trytes = await iota.prepareTransfers(seed, transfers)
     console.log(trytes[0].indexOf('XXAAXXAA9XX'))
