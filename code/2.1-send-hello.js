@@ -29,7 +29,7 @@ const transfers = [
 
 iota
   .prepareTransfers(seed, transfers)
-  .then(trytes => iota.sendTrytes(trytes, (depth = 3), (mwm = 9)))
+  .then(trytes => iota.sendTrytes(trytes, (depth = 3), (mwm = 10)))
   .then(bundle => {
     console.log(bundle)
   })
