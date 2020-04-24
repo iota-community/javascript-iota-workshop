@@ -12,7 +12,7 @@ const mamType = 'restricted'
 const mamSecret = 'DONTSHARETHIS'
 
 // Initialise MAM State
-let mamState = Mam.init('https://nodes.devnet.iota.org:443')
+let mamState = Mam.init('https://nodes.comnet.thetangle.org:443')
 
 // Callback used to pass data out of the fetch
 const logData = data => console.log(trytesToAscii(data))

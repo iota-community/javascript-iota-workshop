@@ -5,7 +5,7 @@
 const iotaLibrary = require('@iota/core')
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://nodes.comnet.thetangle.org:443'
 })
 
 const address =
