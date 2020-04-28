@@ -6,7 +6,7 @@ const iotaLibrary = require('@iota/core')
 const Converter = require('@iota/converter')
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://nodes.comnet.thetangle.org:443'
 })
 
 // Use a random seed as there is no tokens being sent.
@@ -31,7 +31,7 @@ const transfers = [
 
 iota
   .prepareTransfers(seed, transfers)
-  .then(trytes => iota.sendTrytes(trytes, 3, 9))
+  .then(trytes => iota.sendTrytes(trytes, 3, 10))
   .then(bundle => {
     console.log('Transfer successfully sent')
     bundle.map(tx => console.log(tx))

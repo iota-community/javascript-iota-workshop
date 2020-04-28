@@ -6,7 +6,7 @@ const Mam = require('@iota/mam')
 const { trytesToAscii } = require('@iota/converter')
 
 // Initialize MAM State - PUBLIC
-Mam.init('https://nodes.devnet.thetangle.org:443')
+Mam.init('https://nodes.comnet.thetangle.org:443')
 
 const root =
   'OXPOYTSZEOGUOITHYBWDYHXNCLRVQHGXMFMEIJLNHNDEWJYWQHGRPTQJ99MUWRDAOVPBIGSW9MSQLMOOA'

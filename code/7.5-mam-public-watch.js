@@ -8,7 +8,7 @@ async function initMam() {
   console.log('\r\n\r\n')
   console.log('Listening to MAM stream...')
   console.log('\r\n')
-  await Mam.init('https://nodes.devnet.iota.org:443')
+  await Mam.init('https://nodes.comnet.thetangle.org:443')
 }
 
 // Check the MAM stream every 5 seconds for new data on the current root

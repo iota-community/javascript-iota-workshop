@@ -5,7 +5,7 @@
 const iotaLibrary = require('@iota/core')
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://nodes.comnet.thetangle.org:443'
 })
 
 // Replace this with the seed you sent tokens too!
@@ -34,7 +34,7 @@ const main = async () => {
     // Construct bundle and convert to trytes
     const trytes = await iota.prepareTransfers(seed, transfers)
     // Send bundle to node.
-    const response = await iota.sendTrytes(trytes, 3, 9)
+    const response = await iota.sendTrytes(trytes, 3, 10)
 
     console.log('Completed TXs')
     response.map(tx => console.log(tx))
