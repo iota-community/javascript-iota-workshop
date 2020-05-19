@@ -4,6 +4,6 @@
   "dependencies": {
     "@iota/core": "^1.0.0-beta.29",
     "@iota/mam": "^0.7.3",
-    "zeromq": "^6.0.0-beta.6"
+    "zeromq": "^5.1.0"
   }
 }
