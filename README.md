@@ -3,6 +3,7 @@
 Simple examples to help a developer work through interacting with the IOTA network and the [iota.js](https://github.com/iota/iota.js) library. 
 
 ⚠️ **Attention** ⚠️
+
 The workshops currently uses the [iota.js](https://github.com/iotaledger/iota.js/tree/chrysalis) library with the chrysalis branch. This is an experimental library for the testing phase.
 
 You should use the higher level node bindings in the future. The higher level node bindings will be much more abstract and easier to work with.
