@@ -5,7 +5,7 @@
 
 const { sendData, SingleNodeClient, Converter } = require("@iota/iota.js");
 
-const API_ENDPOINT = "http://localhost:14265";
+const API_ENDPOINT = "https://api.lb-0.testnet.chrysalis2.com/";
 
 async function run() {
     const client = new SingleNodeClient(API_ENDPOINT);

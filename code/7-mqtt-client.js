@@ -4,7 +4,7 @@
 
 const { MqttClient } = require("@iota/iota.js");
 
-const API_ENDPOINT = "http://localhost:14265";
+const MQTT_ENDPOINT = "mqtt:api.hornet-0.testnet.chrysalis2.com";
 
 async function run() {
     const mqttClient = new MqttClient(MQTT_ENDPOINT);

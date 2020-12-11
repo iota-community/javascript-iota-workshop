@@ -5,7 +5,7 @@
 const { SingleNodeClient } = require("@iota/iota.js");
 
 async function run() {
-  const client = new SingleNodeClient("http://localhost:14265");
+  const client = new SingleNodeClient("https://api.lb-0.testnet.chrysalis2.com");
 
   const info = await client.info();
   console.log("Node Info");
