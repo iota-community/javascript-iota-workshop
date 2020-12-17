@@ -11,9 +11,10 @@ async function run() {
     const walletSeed = new Ed25519Seed(Converter.hexToBytes("1000000000000000000000000000000000000000000000000000000000000001"));
     
     const address = "iot1q98cdg7273a4y9ttd5trwkv3twtw5kh9dezmj2vvtgh5gfecklzwszfp9lw";
-    const amout = 1;
+    const amount = 1;
     
-    const response = await send(client, walletSeed, new Bip32Path(), address, amout);
+    const walletPath = new Bip32Path("m/44'/4218'/0'/0'/0'");
+    const response = await send(client, walletSeed, walletPath, address, amount);
     console.log("response: ", response);
 }
 
