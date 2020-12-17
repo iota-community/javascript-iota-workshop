@@ -9,7 +9,7 @@
 const iotaLibrary = require('@iota/core')
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://comnet.einfachiota.de/'
+  provider: 'https://nodes.devnet.iota.org/'
 })
 
 const seed =

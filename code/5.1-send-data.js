@@ -6,7 +6,7 @@ const iotaLibrary = require('@iota/core')
 const Converter = require('@iota/converter')
 
 const iota = iotaLibrary.composeAPI({
-  provider: 'https://nodes.devnet.thetangle.org:443'
+  provider: 'https://nodes.devnet.iota.org/'
 })
 
 // Use a random seed as there is no tokens being sent.

@@ -5,7 +5,7 @@
 const Mam = require('@iota/mam')
 const { asciiToTrytes } = require('@iota/converter')
 
-let mamState = Mam.init('https://nodes.devnet.thetangle.org:443')
+let mamState = Mam.init('https://nodes.devnet.iota.org')
 
 // We are using MAM restricted mode with a shared secret in this example
 const mamType = 'restricted'
