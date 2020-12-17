@@ -10,7 +10,8 @@ async function run() {
     const client = new SingleNodeClient(API_ENDPOINT);
 
     const walletSeed = new Ed25519Seed(Converter.hexToBytes("1000000000000000000000000000000000000000000000000000000000000001"));
-    const balance = await getBalance(client, walletSeed, new Bip32Path());
+    const walletPath = new Bip32Path("m/44'/4218'/0'/0'/0'");
+    const balance = await getBalance(client, walletSeed, walletPath);
     console.log("balance: ", balance);
 
 }
