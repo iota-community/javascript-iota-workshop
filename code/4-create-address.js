@@ -14,8 +14,8 @@ async function run() {
    
    const walletPath = new Bip32Path("m/44'/4218'/0'/0'/0'");
    const walletAddressSeed = walletSeed.generateSeedFromPath(walletPath);
-   const walletEd25519Address = new Ed25519Address();
-   const newAddress = walletEd25519Address.publicKeyToAddress(walletAddressSeed.keyPair().publicKey);
+   const walletEd25519Address = new Ed25519Address(walletAddressSeed.keyPair().publicKey);
+   const newAddress = walletEd25519Address.toAddress()
 
    console.log("Wallet");
    console.log("\tSeed:", Converter.bytesToHex(walletSeed.toBytes()));
