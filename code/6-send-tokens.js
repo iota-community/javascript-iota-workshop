@@ -10,7 +10,7 @@ async function run() {
 
     const walletSeed = new Ed25519Seed(Converter.hexToBytes("1000000000000000000000000000000000000000000000000000000000000001"));
     
-    const address = "iot1q98cdg7273a4y9ttd5trwkv3twtw5kh9dezmj2vvtgh5gfecklzwszfp9lw";
+    const address = "iota1q9ycnmwf3xnmqwyzcy27j4w2yhcfha6akzysspmz5wxw8hwc3rs36yzsy68";
     const amount = 1;
     
     const response = await send(client, walletSeed, 0, address, amount);
