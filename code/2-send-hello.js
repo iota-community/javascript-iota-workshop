@@ -12,7 +12,7 @@ async function run() {
 
     const myIndex = "MY-DATA-INDEX";
 
-    const sendResult = await sendData(client, myIndex, Converter.asciiToBytes(`Hello World!`));
+    const sendResult = await sendData(client, myIndex, Converter.utf8ToBytes(`Hello World!`));
     console.log("Received Message Id", sendResult.messageId);
 
 }
