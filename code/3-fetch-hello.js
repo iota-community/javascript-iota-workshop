@@ -16,13 +16,15 @@ async function run() {
   if (found && found.messageIds.length > 0) {
     console.log(`Messages Found: ${found.count}`);
 
-    const lastData = await retrieveData(client, found.messageIds[found.count - 1]);
+    const lastData = await retrieveData(
+      client,
+      found.messageIds[found.count - 1]
+    );
     if (lastData) {
       console.log("First Result");
       console.log("\tIndex: ", lastData.index);
-      console.log("\tData: ", Converter.bytesToAscii(lastData.data));
+      console.log("\tData: ", Converter.bytesToUtf8(lastData.data));
     }
-
   } else {
     console.log("Found no results");
   }
